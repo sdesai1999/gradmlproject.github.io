@@ -1,4 +1,5 @@
 # ML Grad Project Proposal
+##### Saurav Desai, Aarun Srinivas, Kanav Garg, Krish Dholakia, Rahul Hardikar
 
 
 ### Introduction/Background
