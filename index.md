@@ -22,17 +22,19 @@ There are several methods worth investigating. They are mentioned below, however
 
 ### Data Cleaning
 
+Since there are so many features and rows in our dataset, we had to devote a significant amount of time (more than we expected) towards cleaning the data.
+
 Our dataset consists of more than 5-10 million datapoints, which would require a lot of resources to analyze and process, so, we decided to only consider the first 500,000 entries for exploratory data analysis and preliminary statistical learning. 
 
 The dataset consists of over 150 columns, out of which multiple columns seems to have incomplete data. First, we eliminate all columns with more than 10% missing data entries, since these wouldn’t be helpful in finding correlations. We also eliminate all loans that have a “current” status since these do not have an outcome yet. 
 
 By applying some basic domain knowledge, we were able to eliminate more irrelevant columns such as loan id, urls, employment titles, etc. and duplicate columns (funded_amnt, funded_amnt_inv), as these would not provide any predictive value to our model. We then create a heatmap of our dataset to visualize any missing data. 
 
-[Insert heatmap 1 here] 
+<img src="/img/null_values.png" width="500"/>
 
 Next, we simply drop any remaining data entries that have a null value, which completes our dataset. 
 
-[insert heatmap 2 here]
+<img src="/img/post_null_values.png" width="500"/>
 
 We still have ~70 features remaining, which is still very large. During our exploratory data analysis stage, we will attempt to find features that have higher correlations with loan outcomes to further eliminate unnecessary features. We would also attempt to use PCA to reduce our dimensionality.
 
