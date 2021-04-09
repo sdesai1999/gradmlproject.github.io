@@ -46,10 +46,47 @@ Overall, since a financial institution usually doesn’t have too many features 
 
 Since a few of our columns are strings, we must encode this into numeric values so a classification model understands the data. For the loan status column, we chose to define all good loans as 1 and bad loans as 0. So, all loan statuses that are negative (Charged off, Late on payments), are replaced with 0. For all other columns, we run a simple loop where we assign a random integer value to every unique value in a particular column. 
 
-### Data Visualizations
+### Visualizing our Dataset
 
+#### Grade, Interest Rate, and Status
+
+<img src="/img/grade_loanstatus.png" width="250"/>
+<img src="/img/grade_intrate_status.png" width="250"/>
+
+The above two images show the relationship between loan grade, interest rate, and the loan status (1 or 0) which was described above. We see that alphabetically the lowest grade gets the lowest interest rate, however the number of defaulters is roughly half for each category. 
+
+#### Feature Correlation
+
+<img src="/img/feature_correlation.png" width="350"/>
+
+This heatmap tracks the correlation between different features of our dataset. We can see here that the loan status is highly correlated to last_fico_range_high and last_fico_range_low. This intuitively makes sense as the fico score tracks the borrower’s credit reports to assess credit risk which corresponds to their ability to pay back the loan. 
+
+#### Loan Type and Reason
+
+<img src="/img/status_loanreason.png" width="470"/>
+<img src="/img/status_time.png" width="470"/>
+
+The above two visualizations show the relationship between the above described loan status (1 or 0) and loan duration and reason. In the second image, it can be seen that loans paid on time are usually 36 months long. 
+
+#### Total Loan Amount, Status, and Interest Rate
+
+<img src="/img/status_amount_intrate.png" width="500"/>
+
+The above graph demonstrates that high amount loans with high interest rates are more likely to be defaulted on. Specifically, towards the bottom left corner where the loan amount and interest rates are small, a large concentration of loans that did not get defaulted on can be seen. On the other hand, towards the top right corner where the loan amount and interests rates are both high, a large concentration of loans that did get defaulted on can be seen.
 
 ### Results so far
+
+#### Exploratory Data Analysis
+
+<img src="/img/pca_2comp.png" width="350"/>
+
+To begin with, we ran 2 component PCA on the dataset. This was done to help us understand whether there were any individual features which could provide significant information. However, the explained variance on 2 component PCA is - [0.11820207, 0.07089925]. Our explained variance is at a combined 18% of information. This is fairly low, indicating a 2 component PCA analysis is a fairly poor way of analysing data and seeing patterns within the same. 
+
+Another approach we tried was by running the correlation function offered by pandas. We chose to use ‘loan_status’ as our reference point, and mapped all strings in the dataset with unique numbers. We then set a correlation threshold of +/- 0.5 (i.e. only consider those features which had a correlation w/ loan_status < -0.5 or >0.5). 
+
+The only 2 features that met this threshold were the last_fico_range_high and last_fico_range_low. However, when we plotted the data, we weren’t able to extract too much valuable information from these columns. 
+
+#### Logistic Regression
 
 We trained a logistic regression model with the data we had available to us from Kaggle. First, we removed/replaced columns with string entries, as this would cause errors with our model. Then, we chose 10 features based on the data visualization on correlation mentioned earlier. 
 
@@ -60,6 +97,8 @@ We plan on incorporating more types of ML models, including unsupervised learnin
 ### Future Results/Work
 
 It is our goal that through the listed methods, we will be able to understand macro-trends and generalized patterns behind loan eligibility and determine future probability of people meeting their loan requirements. We aim to accurately predict the likelihood that people will return capital over a period of time, and visualize these trends over time. We anticipate our different approaches will yield a diverging set of predictions, and we will use this information along with our split of data into train/dev/test to evaluate the best approach. 
+
+Additionally, since the loan data has two datasets (accepted and rejected loan applications), we would train our classification model on all the accepted loan applications and then use our trained model to predict the outcomes of all the rejected loan applications. Through this, we could make an estimate of how much the lending company could have made if they used our prediction model and went through with those loans instead of rejecting them. 
 
 ### Discussion
 
