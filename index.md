@@ -46,10 +46,20 @@ Overall, since a financial institution usually doesn’t have too many features 
 
 Since a few of our columns are strings, we must encode this into numeric values so a classification model understands the data. For the loan status column, we chose to define all good loans as 1 and bad loans as 0. So, all loan statuses that are negative (Charged off, Late on payments), are replaced with 0. For all other columns, we run a simple loop where we assign a random integer value to every unique value in a particular column. 
 
+### Data Visualizations
 
-### Potential Results
 
-It is our goal that through the above listed methods, we will be able to understand macro-trends and generalized patterns behind loan eligibility and determine future probability of people meeting their loan requirements. We aim to accurately predict the likelihood that people will return capital over a period of time, and visualize these trends over time. We anticipate our different approaches will yield a diverging set of predictions, and we will use this information along with our split of data into train/dev/test to evaluate the best approach. 
+### Results so far
+
+We trained a logistic regression model with the data we had available to us from Kaggle. First, we removed/replaced columns with string entries, as this would cause errors with our model. Then, we chose 10 features based on the data visualization on correlation mentioned earlier. 
+
+We used a simple 70/30 train-test split to fit the model and then to predict. It ended up being 90% accurate in determining whether or not people would pay their loans on time. 
+
+We plan on incorporating more types of ML models, including unsupervised learning, for our final report. 
+
+### Future Results/Work
+
+It is our goal that through the listed methods, we will be able to understand macro-trends and generalized patterns behind loan eligibility and determine future probability of people meeting their loan requirements. We aim to accurately predict the likelihood that people will return capital over a period of time, and visualize these trends over time. We anticipate our different approaches will yield a diverging set of predictions, and we will use this information along with our split of data into train/dev/test to evaluate the best approach. 
 
 ### Discussion
 
