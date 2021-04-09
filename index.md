@@ -30,11 +30,11 @@ The dataset consists of over 150 columns, out of which multiple columns seems to
 
 By applying some basic domain knowledge, we were able to eliminate more irrelevant columns such as loan id, urls, employment titles, etc. and duplicate columns (funded_amnt, funded_amnt_inv), as these would not provide any predictive value to our model. We then create a heatmap of our dataset to visualize any missing data. 
 
-<img src="/img/null_values.png" width="500"/>
+<img src="img/null_values.png" width="500"/>
 
 Next, we simply drop any remaining data entries that have a null value, which completes our dataset. 
 
-<img src="/img/post_null_values.png" width="500"/>
+<img src="img/post_null_values.png" width="500"/>
 
 We still have ~70 features remaining, which is still very large. During our exploratory data analysis stage, we will attempt to find features that have higher correlations with loan outcomes to further eliminate unnecessary features. We would also attempt to use PCA to reduce our dimensionality.
 
@@ -50,27 +50,27 @@ Since a few of our columns are strings, we must encode this into numeric values 
 
 #### Grade, Interest Rate, and Status
 
-<img src="/img/grade_loanstatus.png" width="250"/>
-<img src="/img/grade_intrate_status.png" width="250"/>
+<img src="img/grade_loanstatus.png" width="250"/>
+<img src="img/grade_intrate_status.png" width="250"/>
 
 The above two images show the relationship between loan grade, interest rate, and the loan status (1 or 0) which was described above. We see that alphabetically the lowest grade gets the lowest interest rate, however the number of defaulters is roughly half for each category. 
 
 #### Feature Correlation
 
-<img src="/img/feature_correlation.png" width="350"/>
+<img src="img/feature_correlation.png" width="350"/>
 
 This heatmap tracks the correlation between different features of our dataset. We can see here that the loan status is highly correlated to last_fico_range_high and last_fico_range_low. This intuitively makes sense as the fico score tracks the borrower’s credit reports to assess credit risk which corresponds to their ability to pay back the loan. 
 
 #### Loan Type and Reason
 
-<img src="/img/status_loanreason.png" width="470"/>
-<img src="/img/status_time.png" width="470"/>
+<img src="img/status_loanreason.png" width="470"/>
+<img src="img/status_time.png" width="470"/>
 
 The above two visualizations show the relationship between the above described loan status (1 or 0) and loan duration and reason. In the second image, it can be seen that loans paid on time are usually 36 months long. 
 
 #### Total Loan Amount, Status, and Interest Rate
 
-<img src="/img/status_amount_intrate.png" width="500"/>
+<img src="img/status_amount_intrate.png" width="500"/>
 
 The above graph demonstrates that high amount loans with high interest rates are more likely to be defaulted on. Specifically, towards the bottom left corner where the loan amount and interest rates are small, a large concentration of loans that did not get defaulted on can be seen. On the other hand, towards the top right corner where the loan amount and interests rates are both high, a large concentration of loans that did get defaulted on can be seen.
 
@@ -78,7 +78,7 @@ The above graph demonstrates that high amount loans with high interest rates are
 
 #### Exploratory Data Analysis
 
-<img src="/img/pca_2comp.png" width="350"/>
+<img src="img/pca_2comp.png" width="350"/>
 
 To begin with, we ran 2 component PCA on the dataset. This was done to help us understand whether there were any individual features which could provide significant information. However, the explained variance on 2 component PCA is - [0.11820207, 0.07089925]. Our explained variance is at a combined 18% of information. This is fairly low, indicating a 2 component PCA analysis is a fairly poor way of analysing data and seeing patterns within the same. 
 
