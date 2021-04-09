@@ -90,7 +90,9 @@ The only 2 features that met this threshold were the last_fico_range_high and la
 
 We trained a logistic regression model with the data we had available to us from Kaggle. First, we removed/replaced columns with string entries, as this would cause errors with our model. Then, we chose 10 features based on the data visualization on correlation mentioned earlier. 
 
-We used a simple 70/30 train-test split to fit the model and then to predict. It ended up being 90% accurate in determining whether or not people would pay their loans on time. 
+We used a simple 70/30 train-test split to fit the model and then to predict. We have approximately 81K occurrences of class 1 (accepted loans) and 21K occurrences of class 0 (defaulted loans). This may indicate that our dataset for this experiment was biased. We’ll have to work to overcome this bias in the steps forward.
+ 
+This may also have resulted in significantly better classification for class 1 compared to class 0. Working with the current dataset, we have 79% precision for class 0 and 93% for class 1. We see that the overall accuracy of this model is pretty high ~90%.
 
 We plan on incorporating more types of ML models, including unsupervised learning, for our final report. 
 
