@@ -102,6 +102,14 @@ The precision for class 0 was 0.77 and the precision for 1 was 0.94. The overall
 
 We had hoped that random forest would get better results than logistic regression, but the improvement was only very small. 
 
+#### K-Means Clustering
+
+To approach this in a different way, we tried using an unsupervised method: K-means clustering. We had the same goal in mind for this method, and that was to try and distinguish between 0 and 1 in the loan status column. 
+
+However, the accuracy was quiute bad with K-means. We only had 0.23 precision for class 0 and 0.84 precision for class 1. This is significantly lower than all of our other models. 
+
+After running the model, we believed that there were too many features in the dataset for K-means to have a good accuracy. Additionally, from our PCA analysis, we also learned that there wasn't enough info gain for any of the features for K-means to work well. 
+
 ### Future Results/Work
 
 It is our goal that through the listed methods, we will be able to understand macro-trends and generalized patterns behind loan eligibility and determine future probability of people meeting their loan requirements. We aim to accurately predict the likelihood that people will return capital over a period of time, and visualize these trends over time. We anticipate our different approaches will yield a diverging set of predictions, and we will use this information along with our split of data into train/dev/test to evaluate the best approach. 
