@@ -1,4 +1,4 @@
-# ML Grad Project Midterm Report
+# ML Grad Project Final Report
 ##### Saurav Desai, Aarun Srinivas, Kanav Garg, Krish Dholakia, Rahul Hardikar
 
 
@@ -14,9 +14,8 @@ For this class, we will be building a model to make predictions on whether a loa
 
 There are several methods worth investigating. They are mentioned below, however, these are subject to change as we evolve our approaches to produce more accurate results. 
 
-1. Linear/Logistic Regression
+1. Logistic Regression
 2. Random Forest
-3. SVC's or Decision Trees
 4. K-means Clustering
 5. PCA
 
@@ -106,19 +105,19 @@ We had hoped that random forest would get better results than logistic regressio
 
 To approach this in a different way, we tried using an unsupervised method: K-means clustering. We had the same goal in mind for this method, and that was to try and distinguish between 0 and 1 in the loan status column. 
 
-However, the accuracy was quiute bad with K-means. We only had 0.23 precision for class 0 and 0.84 precision for class 1. This is significantly lower than all of our other models. 
+However, the accuracy was quite bad with K-means. We only had 0.23 precision for class 0 and 0.84 precision for class 1. This is significantly lower than all of our other models. 
 
 After running the model, we believed that there were too many features in the dataset for K-means to have a good accuracy. Additionally, from our PCA analysis, we also learned that there wasn't enough info gain for any of the features for K-means to work well. 
-
-### Future Results/Work
-
-It is our goal that through the listed methods, we will be able to understand macro-trends and generalized patterns behind loan eligibility and determine future probability of people meeting their loan requirements. We aim to accurately predict the likelihood that people will return capital over a period of time, and visualize these trends over time. We anticipate our different approaches will yield a diverging set of predictions, and we will use this information along with our split of data into train/dev/test to evaluate the best approach. 
-
-Additionally, since the loan data has two datasets (accepted and rejected loan applications), we would train our classification model on all the accepted loan applications and then use our trained model to predict the outcomes of all the rejected loan applications. Through this, we could make an estimate of how much the lending company could have made if they used our prediction model and went through with those loans instead of rejecting them. 
 
 ### Discussion
 
 Since the ability for a person to return capital is dependent on a multitude of factors, we have the dual challenge of a) ensuring we cover as many potential signals as possible b) we weight these signals appropriately. Our ability to weigh these signals will partially depend on the size and nature of our training data. If our data is too sparse, we might overweight certain features, harming the accuracy of our loan prediction model. However, a good loan prediction model can have a powerful impact in the world of finance - potentially allowing millions of people who might otherwise have been rejected to gain access to appropriate financial resources. We can further leverage the fact that as the field of AI advances, loan prediction models will become increasingly accurate and unbiased. 
+
+### Conclusion
+
+After doing all the work, it can be seen that two of our models had a good accuracy: Random Forest and Logistic Regression. While random forest had a slightly better accuracy (about 1% better), it was fairly similar in accuracy to logistic regression. Our unsupervised model, K-means, performed poorly, possibly due to there being a lot of features and the fact that none of the features had enough info gain for them to make a significant impact. 
+
+One thing we realized as we went through the project was that our dataset might have been biased. There were a lot more examples of loans that did not default, which may have skewed the results in a way we didn't want. Additionally, while doing a 70-30 split, the 30% that was used for testing was not a lot of data. We only used a portion of the overall dataset in our project, so a way to get more accurate results would be to simply run it on more examples. 
 
 
 ### Dataset
