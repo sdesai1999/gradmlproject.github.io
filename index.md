@@ -115,7 +115,7 @@ Since the ability for a person to return capital is dependent on a multitude of 
 
 ### Conclusion
 
-After doing all the work, it can be seen that two of our models had a good ac: Random Forest and Logistic Regression. While random forest had a slightly better accuracy (about 1% better), it was fairly similar to logistic regression. Our unsupervised model, K-means, performed poorly, possibly due to there being a lot of features and the fact that none of the features had enough info-gain for them to make a significant impact. 
+After doing all the work, it can be seen that two of our models had a good accuracy: Random Forest and Logistic Regression. While random forest had a slightly better accuracy (about 1% better), it was fairly similar to logistic regression. Our unsupervised model, K-means, performed poorly, possibly due to there being a lot of features and the fact that none of the features had enough info-gain for them to make a significant impact. 
 
 From analyzing the results, we realized that our dataset might have been biased. There were a lot more examples of accepted loans, which may have skewed the results in a way we didn't want. Additionally, while doing a 70-30 split, the 30% that was used for testing was not a lot of data in absolute terms. We only used a portion of the overall dataset in our project, so a way to get a more accurate representation of model performance would be to run it on larger datasets.
 
