@@ -1,4 +1,4 @@
-# ML Grad Project Final Report
+# Predicting whether People will Default on Loans or Not
 ##### Saurav Desai, Aarun Srinivas, Kanav Garg, Krish Dholakia, Rahul Hardikar
 
 
