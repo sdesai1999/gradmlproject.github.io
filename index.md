@@ -123,6 +123,10 @@ From analyzing the results, we realized that our dataset might have been biased.
 ### Dataset
 - [Lending Club Dataset from Kaggle](https://www.kaggle.com/wordsforthewise/lending-club)
 
+### Team Contribution Notes
+
+All members of the team contributed equally on all tasks involved. We held group meetings to work together.
+
 ### References
 
 1. https://medium.com/devcareers/loan-prediction-using-selected-machine-learning-algorithms-1bdc00717631
